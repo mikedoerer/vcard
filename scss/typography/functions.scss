@@ -2,45 +2,72 @@
 @use "../system";
 
 @function get-font-size($typo) {
-    @if not map-has-key(variables.$typography, $typo) {
-        @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
-    }
-    $t: map-get(variables.$typography, $typo);
-    @if map-has-key($t, font-size) {
-        @return var(--#{system.$scssPrefix}area-#{$typo}-font-size, var(--#{system.$scssPrefix}#{$typo}-font-size, map-get($t, font-size)));
-    }
-    @return var(--#{system.$scssPrefix}area-#{$typo}-font-size, var(--#{system.$scssPrefix}#{$typo}-font-size));
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  $t: map-get(variables.$typography, $typo);
+  @if map-has-key($t, font-size) {
+    @return var(
+      --#{system.$scssPrefix}area-#{$typo}-font-size,
+      var(--#{system.$scssPrefix}#{$typo}-font-size, map-get($t, font-size))
+    );
+  }
+  @return var(
+    --#{system.$scssPrefix}area-#{$typo}-font-size,
+    var(--#{system.$scssPrefix}#{$typo}-font-size)
+  );
 }
 
 @function get-line-height($typo) {
-    @if not map-has-key(variables.$typography, $typo) {
-        @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
-    }
-    $t: map-get(variables.$typography, $typo);
-    @if map-has-key($t, line-height) {
-        @return var(--#{system.$scssPrefix}area-#{$typo}-line-height, var(--#{system.$scssPrefix}#{$typo}-line-height, map-get($t, line-height)));
-    }
-    @return var(--#{system.$scssPrefix}area-#{$typo}-line-height, var(--#{system.$scssPrefix}#{$typo}-line-height));
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  $t: map-get(variables.$typography, $typo);
+  @if map-has-key($t, line-height) {
+    @return var(
+      --#{system.$scssPrefix}area-#{$typo}-line-height,
+      var(--#{system.$scssPrefix}#{$typo}-line-height, map-get($t, line-height))
+    );
+  }
+  @return var(
+    --#{system.$scssPrefix}area-#{$typo}-line-height,
+    var(--#{system.$scssPrefix}#{$typo}-line-height)
+  );
 }
 
 @function get-margin-top($typo) {
-    @if not map-has-key(variables.$typography, $typo) {
-        @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
-    }
-    $t: map-get(variables.$typography, $typo);
-    @if map-has-key($t, margin-top) {
-        @return var(--#{system.$scssPrefix}area-#{$typo}-margin-top, var(--#{system.$scssPrefix}#{$typo}-margin-top, map-get($t, margin-top)));
-    }
-    @return var(--#{system.$scssPrefix}area-#{$typo}-margin-top, var(--#{system.$scssPrefix}#{$typo}-margin-top));
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  $t: map-get(variables.$typography, $typo);
+  @if map-has-key($t, margin-top) {
+    @return var(
+      --#{system.$scssPrefix}area-#{$typo}-margin-top,
+      var(--#{system.$scssPrefix}#{$typo}-margin-top, map-get($t, margin-top))
+    );
+  }
+  @return var(
+    --#{system.$scssPrefix}area-#{$typo}-margin-top,
+    var(--#{system.$scssPrefix}#{$typo}-margin-top)
+  );
 }
 
 @function get-margin-bottom($typo) {
-    @if not map-has-key(variables.$typography, $typo) {
-        @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
-    }
-    $t: map-get(variables.$typography, $typo);
-    @if map-has-key($t, margin-bottom) {
-        @return var(--#{system.$scssPrefix}area-#{$typo}-margin-bottom, var(--#{system.$scssPrefix}#{$typo}-margin-bottom, map-get($t, margin-bottom)));
-    }
-    @return var(--#{system.$scssPrefix}area-#{$typo}-margin-bottom, var(--#{system.$scssPrefix}#{$typo}-margin-bottom));
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  $t: map-get(variables.$typography, $typo);
+  @if map-has-key($t, margin-bottom) {
+    @return var(
+      --#{system.$scssPrefix}area-#{$typo}-margin-bottom,
+      var(
+        --#{system.$scssPrefix}#{$typo}-margin-bottom,
+        map-get($t, margin-bottom)
+      )
+    );
+  }
+  @return var(
+    --#{system.$scssPrefix}area-#{$typo}-margin-bottom,
+    var(--#{system.$scssPrefix}#{$typo}-margin-bottom)
+  );
 }

@@ -1,21 +1,19 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <header class="page-header">
-        <ul>
-            <li><NuxtLink href="/">Home</NuxtLink></li>
-            <li><NuxtLink href="/qr">QR</NuxtLink></li>
-        </ul>
-    </header>
+  <header class="page-header">
+    <ul>
+      <li><NuxtLink href="/">Home</NuxtLink></li>
+      <li><NuxtLink href="/qr">QR</NuxtLink></li>
+    </ul>
+  </header>
 </template>
 
 <style scoped lang="scss">
-@use "~/scss/list";
+@use "module/list";
 .page-header {
-    ul {
-        @include list.reset;
-    }
+  ul {
+    @include list.reset;
+  }
 }
 </style>

@@ -1,14 +1,13 @@
 <template>
-    <NuxtLayout>
-        <NuxtPage/>
-    </NuxtLayout>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss">
-@use "@/scss/config";
+@use "module/config";
 @import "modern-css-reset";
 @include config.core-styles;
 </style>

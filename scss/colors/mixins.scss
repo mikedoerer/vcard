@@ -2,11 +2,14 @@
 @use "../system";
 
 @mixin core-styles {
-    @at-root {
-        :root {
-            @each $color in map-keys(variables.$colors) {
-                --#{system.$scssPrefix}color-#{$color}: #{map-get(variables.$colors, $color)};
-            }
-        }
+  @at-root {
+    :root {
+      @each $color in map-keys(variables.$colors) {
+        --#{system.$scssPrefix}color-#{$color}: #{map-get(
+            variables.$colors,
+            $color
+          )};
+      }
     }
+  }
 }

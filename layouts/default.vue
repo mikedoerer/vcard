@@ -1,11 +1,11 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <PageHeader/>
+  <PageDeclaration>
+    <PageHeader />
     <PageMain>
-        <slot/>
+      <slot />
     </PageMain>
-    <PageFooter/>
+    <PageFooter />
+  </PageDeclaration>
 </template>
