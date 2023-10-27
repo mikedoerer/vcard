@@ -1,0 +1,63 @@
+$typography: (
+    headline1: (
+        font-size: 32px,
+        line-height: 1.2em,
+        margin-top: 30px,
+        margin-bottom: 15px
+    ),
+
+        headline2: (
+                font-size: 28px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+
+
+        headline3: (
+                font-size: 24px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+
+        headline4: (
+                font-size: 22px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+
+        headline5: (
+                font-size: 20px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+
+        headline6: (
+                font-size: 18px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+
+        copy1: (
+                font-size: 16px,
+                line-height: 1.5em,
+                margin-top: 0,
+                margin-bottom: 20px
+        ),
+        copy2: (
+                font-size: 16px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 15px
+        ),
+        small: (
+                font-size: 12px,
+                line-height: 1.2em,
+                margin-top: 0,
+                margin-bottom: 5px
+        ),
+) !default;

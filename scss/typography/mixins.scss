@@ -1,0 +1,43 @@
+@use "variables";
+@use "functions";
+@use "../system";
+
+@mixin get($typo, $margins: false) {
+    @if not map-has-key(variables.$typography, $typo) {
+        @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+    }
+    font-size: functions.get-font-size($typo);
+    line-height: functions.get-line-height($typo);
+    @if $margins {
+            margin-top: functions.get-margin-top($typo);
+            margin-bottom: functions.get-margin-bottom($typo);
+    }
+}
+
+@mixin body-text {
+    h1 {@include get(headline1, true)}
+    h2 {@include get(headline2, true)}
+    h3 {@include get(headline3, true)}
+    h4 {@include get(headline4, true)}
+    h5 {@include get(headline5, true)}
+    h6 {@include get(headline6, true)}
+    p,ul,ol,li,td,th,dd,dt {@include get(copy1, true)}
+    small {@include get(small, true)}
+}
+
+@mixin core-styles {
+    @at-root {
+        :root {
+            @each $typo in map-keys(variables.$typography) {
+                $t: map-get(variables.$typography, $typo);
+                @each $attr in map-keys($t) {
+                    --#{system.$scssPrefix}#{$typo}-#{$attr}: #{map-get($t, $attr)};
+                }
+            }
+        }
+
+        .bodytext {
+            @include body-text;
+        }
+    }
+}

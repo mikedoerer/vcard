@@ -1,18 +1,14 @@
 <template>
-<header>
-
-    <ul>
-        <li><NuxtLink href="/">Home</NuxtLink></li>
-        <li><NuxtLink href="/qr">QR</NuxtLink></li>
-    </ul>
-
-</header>
-<main>
-    <NuxtPage page-key="static" />
-</main>
-<footer>
-
-</footer>
+    <NuxtLayout>
+        <NuxtPage/>
+    </NuxtLayout>
 </template>
+
 <script setup lang="ts">
 </script>
+
+<style lang="scss">
+@use "@/scss/config";
+@import "modern-css-reset";
+@include config.core-styles;
+</style>
