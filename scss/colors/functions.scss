@@ -3,13 +3,20 @@
 
 @function get($colorName) {
   @if not map-has-key(variables.$colors, $colorName) {
-    @error "Invalid color for themeColor specified! Choose one of #{map-keys(variables.$colors)}";
+    @error "Invalid color specified! Choose one of #{map-keys(variables.$colors)}";
   }
   @return var(
-    --#{system.$scssPrefix}area-color-#{$colorName},
+    --#{system.$variablePrefix}area-color-#{$colorName},
     var(
-      --#{system.$scssPrefix}color-#{$colorName},
+      --#{system.$variablePrefix}color-#{$colorName},
       #{map-get(variables.$colors, $colorName)}
     )
   );
+}
+
+@function set($colorName, $value) {
+  @if not map-has-key(variables.$colors, $colorName) {
+    @error "Invalid color specified! Choose one of #{map-keys(variables.$colors)}";
+  }
+  @return "--#{system.$variablePrefix}color-#{$colorName}:" + $value;
 }

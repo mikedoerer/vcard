@@ -3,8 +3,3 @@
 @use "colors";
 @use "typography";
 @use "list";
-
-@mixin core-styles {
-  @include colors.core-styles;
-  @include typography.core-styles;
-}

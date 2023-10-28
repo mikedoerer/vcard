@@ -8,6 +8,5 @@
 
 <style lang="scss">
 @use "module/config";
-@import "modern-css-reset";
-@include config.core-styles;
+@use "module/core-styles";
 </style>

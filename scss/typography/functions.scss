@@ -8,14 +8,24 @@
   $t: map-get(variables.$typography, $typo);
   @if map-has-key($t, font-size) {
     @return var(
-      --#{system.$scssPrefix}area-#{$typo}-font-size,
-      var(--#{system.$scssPrefix}#{$typo}-font-size, map-get($t, font-size))
+      --#{system.$variablePrefix}area-typography-#{$typo}-font-size,
+      var(
+        --#{system.$variablePrefix}typography-#{$typo}-font-size,
+        map-get($t, font-size)
+      )
     );
   }
   @return var(
-    --#{system.$scssPrefix}area-#{$typo}-font-size,
-    var(--#{system.$scssPrefix}#{$typo}-font-size)
+    --#{system.$variablePrefix}area-typography-#{$typo}-font-size,
+    var(--#{system.$variablePrefix}typography-#{$typo}-font-size)
   );
+}
+
+@function set-font-size($typo, $value) {
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  @return "--#{system.$variablePrefix}typography-#{$typo}-font-size:" + $value;
 }
 
 @function get-line-height($typo) {
@@ -25,14 +35,24 @@
   $t: map-get(variables.$typography, $typo);
   @if map-has-key($t, line-height) {
     @return var(
-      --#{system.$scssPrefix}area-#{$typo}-line-height,
-      var(--#{system.$scssPrefix}#{$typo}-line-height, map-get($t, line-height))
+      --#{system.$variablePrefix}area-typography-#{$typo}-line-height,
+      var(
+        --#{system.$variablePrefix}typography-#{$typo}-line-height,
+        map-get($t, line-height)
+      )
     );
   }
   @return var(
-    --#{system.$scssPrefix}area-#{$typo}-line-height,
-    var(--#{system.$scssPrefix}#{$typo}-line-height)
+    --#{system.$variablePrefix}area-typography-#{$typo}-line-height,
+    var(--#{system.$variablePrefix}typography-#{$typo}-line-height)
   );
+}
+
+@function set-line-height($typo, $value) {
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  @return "--#{system.$variablePrefix}typography-#{$typo}-line-height:" + $value;
 }
 
 @function get-margin-top($typo) {
@@ -42,14 +62,24 @@
   $t: map-get(variables.$typography, $typo);
   @if map-has-key($t, margin-top) {
     @return var(
-      --#{system.$scssPrefix}area-#{$typo}-margin-top,
-      var(--#{system.$scssPrefix}#{$typo}-margin-top, map-get($t, margin-top))
+      --#{system.$variablePrefix}area-typography-#{$typo}-margin-top,
+      var(
+        --#{system.$variablePrefix}typography-#{$typo}-margin-top,
+        map-get($t, margin-top)
+      )
     );
   }
   @return var(
-    --#{system.$scssPrefix}area-#{$typo}-margin-top,
-    var(--#{system.$scssPrefix}#{$typo}-margin-top)
+    --#{system.$variablePrefix}area-typography-#{$typo}-margin-top,
+    var(--#{system.$variablePrefix}typography-#{$typo}-margin-top)
   );
+}
+
+@function set-margin-top($typo, $value) {
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  @return "--#{system.$variablePrefix}typography-#{$typo}-margin-top:" + $value;
 }
 
 @function get-margin-bottom($typo) {
@@ -59,15 +89,23 @@
   $t: map-get(variables.$typography, $typo);
   @if map-has-key($t, margin-bottom) {
     @return var(
-      --#{system.$scssPrefix}area-#{$typo}-margin-bottom,
+      --#{system.$variablePrefix}area-typography-#{$typo}-margin-bottom,
       var(
-        --#{system.$scssPrefix}#{$typo}-margin-bottom,
+        --#{system.$variablePrefix}typography-#{$typo}-margin-bottom,
         map-get($t, margin-bottom)
       )
     );
   }
   @return var(
-    --#{system.$scssPrefix}area-#{$typo}-margin-bottom,
-    var(--#{system.$scssPrefix}#{$typo}-margin-bottom)
+    --#{system.$variablePrefix}area-typography-#{$typo}-margin-bottom,
+    var(--#{system.$variablePrefix}typography-#{$typo}-margin-bottom)
   );
+}
+
+@function set-margin-bottom($typo, $value) {
+  @if not map-has-key(variables.$typography, $typo) {
+    @error "Invalid typo for typography specified! Choose one of #{map-keys(variables.$typography)}";
+  }
+  @return "--#{system.$variablePrefix}typography-#{$typo}-margin-bottom:" +
+    $value;
 }

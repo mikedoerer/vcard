@@ -50,16 +50,17 @@
 
 @mixin core-styles {
   @at-root {
-    :root {
-      @each $typo in map-keys(variables.$typography) {
-        $t: map-get(variables.$typography, $typo);
-        @each $attr in map-keys($t) {
-          --#{system.$scssPrefix}#{$typo}-#{$attr}: #{map-get($t, $attr)};
-        }
+    @each $typo in map-keys(variables.$typography) {
+      $t: map-get(variables.$typography, $typo);
+      @each $attr in map-keys($t) {
+        @include system.add-root-style(
+          #{variables.$classPrefix}typography-#{$typo}-#{$attr},
+          map-get($t, $attr)
+        );
       }
     }
 
-    .bodytext {
+    .#{variables.$classPrefix}bodytext {
       @include body-text;
     }
   }
