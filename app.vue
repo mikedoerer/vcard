@@ -7,6 +7,5 @@
 <script setup lang="ts"></script>
 
 <style lang="scss">
-@use "module/config";
-@use "module/core-styles";
+@use "layout/core-styles";
 </style>

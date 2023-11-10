@@ -1,10 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from "url";
+import { config } from "@multivisio/layout/scripts/config.js";
+import path from "node:path";
+
+config(path.resolve(__dirname, "./layout"));
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { 
+    enabled: true
+  },
   buildModules: ["@nuxtjs/style-resources"],
-  alias: {
-    module: fileURLToPath(new URL("./scss", import.meta.url)),
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/layout/config.scss";`,
+        },
+      },
+    },
   },
 });

@@ -1,0 +1,26 @@
+@forward "@multivisio/layout/scss/colors";
+@use "@multivisio/layout/scss/colors";
+
+@function primary($variablePrefix: false) {
+  @return colors.get("primary", $variablePrefix);
+}
+
+@function copy($variablePrefix: false) {
+  @return colors.get("copy", $variablePrefix);
+}
+
+@function light($variablePrefix: false) {
+  @return colors.get("light", $variablePrefix);
+}
+
+@function dark($variablePrefix: false) {
+  @return colors.get("dark", $variablePrefix);
+}
+
+@function accent($variablePrefix: false) {
+  @return colors.get("accent", $variablePrefix);
+}
+
+@function alert($variablePrefix: false) {
+  @return colors.get("alert", $variablePrefix);
+}

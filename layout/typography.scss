@@ -1,0 +1,38 @@
+@forward "@multivisio/layout/scss/typography";
+@use "@multivisio/layout/scss/typography";
+
+@mixin headline1($variablePrefix: false, $margins: false) {
+  @include typography.get("headline1", $variablePrefix, $margins);
+}
+
+@mixin headline2($variablePrefix: false, $margins: false) {
+  @include typography.get("headline2", $variablePrefix, $margins);
+}
+
+@mixin headline3($variablePrefix: false, $margins: false) {
+  @include typography.get("headline3", $variablePrefix, $margins);
+}
+
+@mixin headline4($variablePrefix: false, $margins: false) {
+  @include typography.get("headline4", $variablePrefix, $margins);
+}
+
+@mixin headline5($variablePrefix: false, $margins: false) {
+  @include typography.get("headline5", $variablePrefix, $margins);
+}
+
+@mixin headline6($variablePrefix: false, $margins: false) {
+  @include typography.get("headline6", $variablePrefix, $margins);
+}
+
+@mixin copy($variablePrefix: false, $margins: false) {
+  @include typography.get("copy", $variablePrefix, $margins);
+}
+
+@mixin copy2($variablePrefix: false, $margins: false) {
+  @include typography.get("copy2", $variablePrefix, $margins);
+}
+
+@mixin small($variablePrefix: false, $margins: false) {
+  @include typography.get("small", $variablePrefix, $margins);
+}

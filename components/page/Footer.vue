@@ -2,22 +2,26 @@
 
 <template>
   <footer class="page-footer">
-    <h1 class="headline">Footer</h1>
+    <ul>
+      <li>
+        <h1 class="headline">Footer</h1>
+      </li>
+    </ul>
   </footer>
 </template>
 
 <style scoped lang="scss">
-@use "module/list";
-@use "module/typography";
-@use "module/colors";
+@use "@/layout";
 
 .headline {
-  @include typography.get("headline3");
-  color: colors.get("alert");
+  @include layout.typography-get("headline3", footer);
+  color: layout.colors-get("primary", footer);
 }
+
 .page-footer {
   ul {
-    @include list.reset;
+      margin-bottom: 2px;
+    @include layout.list-reset;
   }
 }
 </style>
